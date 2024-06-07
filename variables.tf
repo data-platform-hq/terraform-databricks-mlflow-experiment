@@ -1,7 +1,7 @@
 variable "experiments" {
   type = set(object({
     experiment_name        = string
-    experiment_path        = optional(string, "/Workspace/Shared")
+    experiment_path        = optional(string, null)
     artifact_location      = optional(string, null)
     experiment_description = optional(string, "Managed by Terraform")
     permissions = optional(set(object({
@@ -9,6 +9,6 @@ variable "experiments" {
       permission_level = string
     })), [])
   }))
-  description = "Set of objects with parameters to configure Databricks clusters and assign permissions to it for certain custom groups"
+  description = "Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups"
   default     = []
 }
