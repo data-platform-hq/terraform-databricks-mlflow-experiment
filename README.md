@@ -43,16 +43,16 @@ module "mlflow_experiments" {
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name                                                                         | Version   |
-| ---------------------------------------------------------------------------- |-----------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform)    | >= 1.0.0  |
-| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | >= 1.14.2 |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
+| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | >=1.14.2 |
 
 ## Providers
 
-| Name                                                                   | Version |
-| ---------------------------------------------------------------------- |---------|
-| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | 1.14.2  |
+| Name | Version |
+|------|---------|
+| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | >=1.14.2 |
 
 ## Modules
 
@@ -60,25 +60,23 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                        | Type     |
-|---------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| [databricks_mlflow_experiment.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/mlflow_experiment)  | resource |
-| [databricks_permissions.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions)              | resource |
+| Name | Type |
+|------|------|
+| [databricks_mlflow_experiment.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/mlflow_experiment) | resource |
+| [databricks_permissions.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions) | resource |
+| [databricks_current_user.me](https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/current_user) | data source |
 
 ## Inputs
 
-| Name                                                      | Description                                | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Default | Required |
-|-----------------------------------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|:--------:|
-| <a name="input_experiments"></a> [experiments](#input\_experiments)      | Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups | <pre>set(object({<br>    experiment_name        = string<br>    experiment_path        = optional(string, null)<br>    artifact_location      = optional(string, null)<br>    experiment_description = optional(string, "Managed by Terraform")<br>    permissions = optional(set(object({<br>      group_name       = string<br>      permission_level = string<br>    })), [])<br>  }))</pre> | n/a     |   yes    |
-
-
-
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_experiments"></a> [experiments](#input\_experiments) | Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups | <pre>set(object({<br>    experiment_name        = string<br>    experiment_path        = optional(string, null)<br>    artifact_location      = optional(string, null)<br>    experiment_description = optional(string, "Managed by Terraform")<br>    permissions = optional(set(object({<br>      group_name       = string<br>      permission_level = string<br>    })), [])<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 
-| Name                                                                   | Description                                             |
-|------------------------------------------------------------------------|---------------------------------------------------------|
-| <a name="output_experiments"></a> [experiments](#output\_experiments)  | Provides name and unique identifier for the experiment  |
+| Name | Description |
+|------|-------------|
+| <a name="output_experiments"></a> [experiments](#output\_experiments) | Provides name and unique identifier for the experiment |
 <!-- END_TF_DOCS -->
 
 ## License
