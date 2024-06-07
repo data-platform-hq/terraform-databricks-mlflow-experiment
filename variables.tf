@@ -10,5 +10,4 @@ variable "experiments" {
     })), [])
   }))
   description = "Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups"
-  default     = []
 }
