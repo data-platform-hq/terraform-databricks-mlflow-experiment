@@ -5,7 +5,7 @@ resource "databricks_mlflow_experiment" "this" {
     for v in var.experiments : (v.experiment_name) => v
   }
 
-  name              = each.value.experiment_path != null ? "${each.value.experiment_path}/${each.value.experiment_name}" : "${data.databricks_current_user.me.home}/${each.value.experiment_name}"
+  name              = "${coalesce(each.value.experiment_path, data.databricks_current_user.me.home)}/${each.value.experiment_name}"
   artifact_location = each.value.artifact_location
   description       = each.value.experiment_description
 }
