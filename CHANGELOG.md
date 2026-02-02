@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-databricks-mlflow-experiment/compare/v1.0.0...v1.1.0) (2026-02-02)
+
+
+### Features
+
+* upgrade provider to Databricks v1.0 ([18cec41](https://github.com/data-platform-hq/terraform-databricks-mlflow-experiment/commit/18cec4198efce50213019733da9413b0ef0e2fb3))
+
 # 1.0.0 (2024-06-13)
 
 
