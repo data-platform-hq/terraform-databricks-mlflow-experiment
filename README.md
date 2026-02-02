@@ -45,14 +45,14 @@ module "mlflow_experiments" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
-| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | >=1.14.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | ~> 1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | >=1.14.2 |
+| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | ~> 1.0 |
 
 ## Modules
 
@@ -70,7 +70,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_experiments"></a> [experiments](#input\_experiments) | Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups | <pre>set(object({<br>    experiment_name        = string<br>    experiment_path        = optional(string, null)<br>    artifact_location      = optional(string, null)<br>    experiment_description = optional(string, "Managed by Terraform")<br>    permissions = optional(set(object({<br>      group_name       = string<br>      permission_level = string<br>    })), [])<br>  }))</pre> | n/a | yes |
+| <a name="input_experiments"></a> [experiments](#input\_experiments) | Set of objects with parameters to configure Databricks mlflow experiments and assign permissions to it for certain custom groups | <pre>set(object({<br/>    experiment_name        = string<br/>    experiment_path        = optional(string, null)<br/>    artifact_location      = optional(string, null)<br/>    experiment_description = optional(string, "Managed by Terraform")<br/>    permissions = optional(set(object({<br/>      group_name       = string<br/>      permission_level = string<br/>    })), [])<br/>  }))</pre> | n/a | yes |
 
 ## Outputs
 
